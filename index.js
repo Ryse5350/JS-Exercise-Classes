@@ -89,7 +89,7 @@ class Car {
   }
   drive(distance){
     if (this.tank - distance/this.milesPerGallon < 0){
-      this.odometer = this.tank * this.milesPerGallon;
+      this.odometer += this.tank * this.milesPerGallon;
       this.tank = 0;
       return `I ran out of fuel at ${this.odometer} miles!`
     }
@@ -211,6 +211,21 @@ class ProjectManager extends Instructor{
   }
 }
 
+
+class SuperCrazy extends ProjectManager{
+}
+
+let blank = new SuperCrazy({
+  gradClassName: "web29",
+  favInstructor: "John",
+  specialty: "webDev",
+  favLanguage: "English",
+  catchPhrase: "Gotta code fast",
+  name: "Shawn",
+  age: 19,
+  location: "USA"
+});
+console.log(blank.speak());
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
